@@ -1,0 +1,171 @@
+""""""""""""""""""""""""""""""""
+" Vundle Setup
+""""""""""""""""""""""""""""""""
+set nocompatible              " required
+filetype off                  " required
+" set the runtime path
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""
+" Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Code fold
+Plugin 'tmhedberg/SimpylFold'
+
+" python indent
+Plugin 'vim-scripts/indentpython.vim'
+
+" color scheme
+Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+
+" SuperTab
+Plugin 'ervandew/supertab'
+
+" PEP8 Checker
+Plugin 'nvie/vim-flake8'
+
+" Syntax Checker
+Plugin 'vim-syntastic/syntastic'
+
+" Status Line
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Paranthesis Balance
+Plugin 'tpope/vim-surround'
+
+call vundle#end()            " required
+
+""""""""""""""""""""""""""""""""""
+" Theme
+""""""""""""""""""""""""""""""""""
+colorscheme zenburn
+
+""""""""""""""""""""""""""""""""""
+" Key Mapping
+""""""""""""""""""""""""""""""""""
+" Toggle Linenum
+nnoremap <C-n> :set nonumber!<CR>
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Toggle Nerd Tree
+noremap <silent> <F12> :call ToggleNetrw()<CR>
+
+" Vim Colon
+nnoremap ; :
+nnoremap , :
+
+" Paste Mode
+set pastetoggle=<F10>
+
+" Folding Indentation
+nnoremap <space> za
+
+""""""""""""""""""""""""""""""""""
+" Other Settings
+""""""""""""""""""""""""""""""""""
+" UTF-8 Environment
+set encoding=utf-8
+
+" Syntax On
+syntax on
+
+" Line Number
+set number
+
+"split settings
+set splitright
+set splitbelow
+
+" code fold docstring visible
+let g:SimpylFold_docstring_preview=1
+
+""""""""""""""""""""""""""""""""""
+" Mouse On
+""""""""""""""""""""""""""""""""""
+set mouse=a
+
+""""""""""""""""""""""""""""""""""
+" Folder Tree Setup
+""""""""""""""""""""""""""""""""""
+" autocmd vimenter * NERDTree
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 15
+let g:NetrwIsOpen=0
+
+" Toggle Function for Explorer
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+
+
+""""""""""""""""""""""""""""""""""
+" Tab Suggestion
+""""""""""""""""""""""""""""""""""
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
+set omnifunc=syntaxcomplete#Complete
+set smarttab
+
+""""""""""""""""""""""""""""""""""
+" Python Settings
+""""""""""""""""""""""""""""""""""
+let python_highlight_all=1
+filetype plugin indent on
+set backspace=indent,eol,start
+
+""""""""""""""""""""""""""""""""""
+" Search Settings
+""""""""""""""""""""""""""""""""""
+" Highlight Search Pattern
+set incsearch hlsearch
+
+" Case in-sensitive search
+set ignorecase smartcase
+
+""""""""""""""""""""""""""""""""""
+" Vim Interface Settings
+""""""""""""""""""""""""""""""""""
+" Ruler
+set number ruler
+
+" Cursor Line
+set cursorline
+
+" Last Status
+set laststatus=2
+
+" Cut Copy Paste Mapping
+command! C let @/=""
+
+""""""""""""""""""""""""""""""""""
+" Undo Settings
+""""""""""""""""""""""""""""""""""
+set undolevels=1000
+set undofile
+set undodir=$HOME/.vim/undo
+
