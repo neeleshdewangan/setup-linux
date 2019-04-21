@@ -1,0 +1,11 @@
+# Git Alias
+alias gdf='git diff'
+alias gss='git status'
+alias gckt='git checkout'
+alias gpo='git push origin'
+alias gpl='git pull'
+alias gbh='git branch'
+alias gcmt='git commit -am'
+alias gcn='git clone'
+alias grs='git reset --soft'
+alias grh='git reset --hard'
