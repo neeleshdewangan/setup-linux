@@ -99,3 +99,6 @@ export PATH="/home/neil/anaconda3/bin:$PATH"
 # Alias
 alias seagate="cd /run/media/neil/Seagate\ Backup\ Plus\ Drive"
 alias projects="cd /media/work/Projects"
+
+# Git Alias
+source ~/.vim/alias_file
