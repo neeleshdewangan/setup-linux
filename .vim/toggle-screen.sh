@@ -1,26 +1,22 @@
 #!/bin/bash
 EXTERNAL_OUTPUT="DP-1"
 INTERNAL_OUTPUT="HDMI-0"
+MONITOR_MODE=$1
 
-# if we don't have a file, start at zero
-if [ ! -f "/tmp/monitor_mode.dat" ] ; then
-  monitor_mode="LEFT"
-
-# otherwise read the value from the file
-else
-  monitor_mode=`cat /tmp/monitor_mode.dat`
-fi
-
-if [ $monitor_mode = "LEFT" ]; then
-        monitor_mode="RIGHT"
-	xrandr --output $EXTERNAL_OUTPUT --auto 
+if [ $MONITOR_MODE = "monitor" ]; then
+	xrandr --output $EXTERNAL_OUTPUT --auto --primary
 	xrandr --output $INTERNAL_OUTPUT --off
-else
-        monitor_mode="LEFT"
+elif [ $MONITOR_MODE = "tv" ]; then
 	xrandr --output $EXTERNAL_OUTPUT --off 
-	xrandr --output $INTERNAL_OUTPUT --auto
+	xrandr --output $INTERNAL_OUTPUT --auto --primary
+	pactl set-card-profile 0 output:hdmi-stereo-extra1
+elif [ $MONITOR_MODE = "clone" ]; then
+	xrandr --output $INTERNAL_OUTPUT --auto --primary
+	xrandr --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT
+	pactl set-card-profile 0 output:hdmi-stereo-extra1
+elif [ $MONITOR_MODE = "expand" ]; then
+	xrandr --output $INTERNAL_OUTPUT --auto --primary
+	xrandr --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT
 	pactl set-card-profile 0 output:hdmi-stereo-extra1
 fi
 
-# Sound Output Always TV
-echo "${monitor_mode}" > /tmp/monitor_mode.dat
