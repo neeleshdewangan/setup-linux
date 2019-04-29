@@ -97,8 +97,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/home/neil/anaconda3/bin:$PATH"
 
 # Alias
-alias seagate="cd /run/media/neil/Seagate\ Backup\ Plus\ Drive"
-alias projects="cd /media/work/Projects"
+alias seagate="cd /seagate"
+alias projects="cd /work/Projects"
 
 # Git Alias
 source ~/.vim/alias_file
