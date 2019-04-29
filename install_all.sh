@@ -2,7 +2,7 @@ echo "Packman Setup..."
 sudo zypper ar -cfp 90 http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
 sudo zypper ar -f http://opensuse-guide.org/repo/openSUSE_Tumbleweed/ dvd
 sudo zypper ref
-sudo zypper dup --from packman
+sudo zypper dup
 sudo zypper install vlc vlc-codecs ffmpeg lame gstreamer-plugins-libav gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-good libdvdcss2
 
 echo "git, zsh and vim setup.."
