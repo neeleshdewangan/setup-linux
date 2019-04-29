@@ -23,6 +23,10 @@ git config credential.helper store
 git push origin HEAD
 cd ..
 
+echo "leecode client installation.."
+sudo zypper install nodejs-common
+sudo npm install -g leetcode-cli
+
 echo "nvidia driver install.."
 sudo zypper gcc make kernel-source kernel-devel
 sudo sh /movies/Downloads/NVIDIA-Linux-x86_64-418.56.run
