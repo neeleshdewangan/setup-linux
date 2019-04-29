@@ -102,3 +102,6 @@ alias projects="cd /work/Projects"
 
 # Git Alias
 source ~/.vim/alias_file
+
+# Toggle Monitor
+alias toggle="sh ~/.vim/toggle-screen.sh"
