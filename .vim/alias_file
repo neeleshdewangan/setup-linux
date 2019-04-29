@@ -9,3 +9,10 @@ alias gcmt='git commit -am'
 alias gcn='git clone'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
+alias gdel='git branch --delete'
+
+# TV Alias
+alias mmon="sh ~/.vim/toggle-screen.sh monitor"
+alias mtv="sh ~/.vim/toggle-screen.sh tv"
+alias mclone="sh ~/.vim/toggle-screen.sh clone"
+alias mexp="sh ~/.vim/toggle-screen.sh expand"

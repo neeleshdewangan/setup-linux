@@ -100,8 +100,6 @@ export PATH="/home/neil/anaconda3/bin:$PATH"
 alias seagate="cd /seagate"
 alias projects="cd /work/Projects"
 
-# Git Alias
+# External Alias File
 source ~/.vim/alias_file
 
-# Toggle Monitor Alias
-source ~/.vim/tv_alias

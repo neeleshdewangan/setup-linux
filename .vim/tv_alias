@@ -1,5 +1,0 @@
-# TV Alias
-alias mmon="sh ~/.vim/toggle-screen.sh monitor"
-alias mtv="sh ~/.vim/toggle-screen.sh tv"
-alias mclone="sh ~/.vim/toggle-screen.sh clone"
-alias mexp="sh ~/.vim/toggle-screen.sh expand"
