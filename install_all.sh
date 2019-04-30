@@ -30,6 +30,9 @@ sudo npm install -g leetcode-cli
 echo "taskwarrior installation.."
 sudo zypper install taskwarrior
 
+echo "kaggle api installation.."
+pip install kaggle
+
 echo "nvidia driver install.."
 sudo zypper gcc make kernel-source kernel-devel
 sudo sh /movies/Downloads/NVIDIA-Linux-x86_64-418.56.run
