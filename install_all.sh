@@ -33,11 +33,9 @@ sudo zypper install taskwarrior
 echo "kaggle api installation.."
 pip install kaggle
 
-echo "Pytorch installation.."
-conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-
-echo "tensorflow installation.."
-conda install tensorflow-gpu keras
+echo "machine learning toolkits installation.."
+conda install -c anaconda tensorflow-gpu==1.12 
+conda install -c anaconda keras-gpu pytorch torchvision
 
 echo "jupyter themes installation.."
 pip install jupyterthemes
