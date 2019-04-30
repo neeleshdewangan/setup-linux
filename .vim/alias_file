@@ -10,6 +10,7 @@ alias gcn='git clone'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
 alias gdel='git branch --delete'
+alias gdelcurr='git checkout master && git pull && git branch --delete $(git branch | head -1 | cut -c 3-)'
 
 # TV Alias
 alias mmon="sh ~/.vim/toggle-screen.sh monitor"
