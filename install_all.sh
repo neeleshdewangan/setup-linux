@@ -33,6 +33,11 @@ sudo zypper install taskwarrior
 echo "kaggle api installation.."
 pip install kaggle
 
+echo "Pytorch installation.."
+conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
+
+echo "tensorflow installation.."
+pip install tensorflow-gpu keras
 echo "nvidia driver install.."
 sudo zypper gcc make kernel-source kernel-devel
 sudo sh /movies/Downloads/NVIDIA-Linux-x86_64-418.56.run
