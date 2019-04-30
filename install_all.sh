@@ -34,10 +34,15 @@ echo "kaggle api installation.."
 pip install kaggle
 
 echo "Pytorch installation.."
-conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 
 echo "tensorflow installation.."
-pip install tensorflow-gpu keras
+conda install tensorflow-gpu keras
+
+echo "jupyter themes installation.."
+pip install jupyterthemes
+jt -t onedork -fs 95 -altp -tfs 11 -nfs 115 -cellw 88% -T
+
 echo "nvidia driver install.."
 sudo zypper gcc make kernel-source kernel-devel
 sudo sh /movies/Downloads/NVIDIA-Linux-x86_64-418.56.run
@@ -47,4 +52,3 @@ echo "-- sudo vim /etc/default/grub"
 echo "-- add nomodeset in linux line and exit"
 echo "-- update grub using: sudo grub2-mkconfig -o /boot/grub2/grub.cfg"
 echo "-- reboot"
-
