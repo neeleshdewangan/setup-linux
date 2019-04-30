@@ -43,7 +43,7 @@ call vundle#end()            " required
 """"""""""""""""""""""""""""""""""
 " Theme
 """"""""""""""""""""""""""""""""""
-colorscheme zenburn
+colorscheme gruvbox
 
 """"""""""""""""""""""""""""""""""
 " Key Mapping
