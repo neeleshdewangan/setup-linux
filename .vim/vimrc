@@ -44,6 +44,7 @@ call vundle#end()            " required
 " Theme
 """"""""""""""""""""""""""""""""""
 colorscheme gruvbox
+set bg=dark
 
 """"""""""""""""""""""""""""""""""
 " Key Mapping
