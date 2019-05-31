@@ -12,7 +12,7 @@ git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox
 cp ~/.vim/bundle/gruvbox/colors/gruvbox.vim ~/.vim/colors/
 vim +PluginInstall +qall
 sudo chsh -s $(which zsh) ec2-user
-zshrc
+zsh
 
 echo "git username and password store.."
 cd ./setup-linux/
