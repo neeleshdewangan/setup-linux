@@ -1,4 +1,4 @@
-# Git Alias
+# git alias
 alias gdf='git diff'
 alias gss='git status'
 alias gckt='git checkout'
@@ -11,3 +11,10 @@ alias grs='git reset --soft'
 alias grh='git reset --hard'
 alias gdel='git branch --delete'
 alias gdelcurr='git rev-parse --abbrev-ref HEAD > /tmp/.gitbranch && git checkout master && git pull && git branch --delete $(head -1 /tmp/.gitbranch)'
+
+# shopt
+alias shopt='~/.vim/scripts/shopt'
+
+# jupyter
+alias jbook="jupyter-notebook --ip=$(hostname -f)"
+alias jl="jupyter-lab --ip=$(hostname -f)"
