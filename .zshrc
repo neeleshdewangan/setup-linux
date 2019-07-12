@@ -98,4 +98,4 @@ source $ZSH/oh-my-zsh.sh
 
 # External Alias File
 source ~/.vim/alias_file
-
+source ~/.bashrc
