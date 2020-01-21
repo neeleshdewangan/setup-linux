@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Neelesh Dewangan
+	email = neelesh.dewangan@smartnews.com
+# Please adapt and uncomment the following lines:
+#	name = Neelesh Dewangan
+#	email = neelesh.dewangan@smartnews.com
+[branch]
+	autosetuprebase = always
+[alias]  
+	tree = log --oneline --decorate --graph --all

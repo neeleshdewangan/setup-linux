@@ -6,15 +6,10 @@ alias gpo='git push origin'
 alias gpl='git pull'
 alias gbh='git branch'
 alias gcmt='git commit -am'
-alias gcn='git clone'
+alias gcn='git clone --recursive'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
 alias gdel='git branch --delete'
 alias gdelcurr='git rev-parse --abbrev-ref HEAD > /tmp/.gitbranch && git checkout master && git pull && git branch --delete $(head -1 /tmp/.gitbranch)'
-
-# TV Alias
-alias mmon="sh ~/.vim/scripts/toggle-screen.sh monitor"
-alias mtv="sh ~/.vim/scripts/toggle-screen.sh tv"
-alias mclone="sh ~/.vim/scripts/toggle-screen.sh clone"
-alias mexp="sh ~/.vim/scripts/toggle-screen.sh expand"
-alias mdp="xrandr --output DP-1 --auto --scale 4x4 && xrandr --output DP-1 --auto --scale 2x2"
+alias gdeldev='git rev-parse --abbrev-ref HEAD > /tmp/.gitbranch && git checkout develop && git pull && git branch --delete $(head -1 /tmp/.gitbranch)'
+alias gtree='git log --oneline --decorate --graph --all'

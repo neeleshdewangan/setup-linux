@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/home/neil/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$HOME/Library/Python/3.7/bin:$PATH"
 
 # Alias
 alias seagate="cd /seagate"
@@ -102,4 +102,7 @@ alias projects="cd /work/Projects"
 
 # External Alias File
 source ~/.vim/alias_file
-
+alias pip=/usr/local/bin/pip3.7
+alias python=/usr/local/bin/python3.7
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+eval "$(nodenv init -)"
