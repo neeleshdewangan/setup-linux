@@ -3,14 +3,15 @@ alias gdf='git diff'
 alias gss='git status'
 alias gckt='git checkout'
 alias gpo='git push origin'
-alias gpl='git pull'
+alias gpl='git submodule update --recursive && git pull'
 alias gbh='git branch'
 alias gcmt='git commit -am'
-alias gcn='git clone'
+alias gcn='git clone --recursive'
 alias grs='git reset --soft'
-alias grh='git reset --hard'
+alias grh='git fetch --all && git reset --hard'
 alias gdel='git branch --delete'
 alias gdelcurr='git rev-parse --abbrev-ref HEAD > /tmp/.gitbranch && git checkout master && git pull && git branch --delete $(head -1 /tmp/.gitbranch)'
+alias gcmm='git commit -m'
 
 # shopt
 alias shopt='~/.vim/scripts/shopt'
@@ -18,3 +19,14 @@ alias shopt='~/.vim/scripts/shopt'
 # jupyter
 alias jbook="jupyter-notebook --ip=$(hostname -f)"
 alias jl="jupyter-lab --ip=$(hostname -f)"
+alias gtree='git log --oneline --decorate --graph --all'
+export s3neel="s3://smartad-dmp/warehouse/user/neelesh"
+
+alias aliaslist='cat ~/.vim/alias_file'
+
+
+function s3du(){
+   bucket=`cut -d/ -f3 <<< $1`
+   prefix=`awk -F/ '{for (i=4; i<NF; i++) printf $i"/"; print $NF}' <<< $1`
+   aws s3api list-objects --bucket $bucket --prefix=$prefix --output json --query '[sum(Contents[].Size), length(Contents[])]' | jq '. |{ size:.[0],num_objects: .[1]}'
+}
