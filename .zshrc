@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-alias shopt='~/.vim/scripts/shopt' 
+alias shopt='~/.vim/scripts/shopt'
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -99,3 +99,18 @@ source $ZSH/oh-my-zsh.sh
 # External Alias File
 source ~/.vim/alias_file
 source ~/.bashrc
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ec2-user/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ec2-user/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ec2-user/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ec2-user/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
