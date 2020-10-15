@@ -21,5 +21,5 @@ make
 make install
 
 echo "-- Installed version --"
-echo "$(protoc –version)"
+echo "$(protoc –-version)"
 echo "-- -- --"
