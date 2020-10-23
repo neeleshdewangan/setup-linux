@@ -101,3 +101,5 @@ source ~/.vim/alias_file
 alias pip=/usr/local/bin/pip3.7
 alias python=/usr/local/bin/python3.7
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+conda activate $HOME/conda
