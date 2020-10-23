@@ -25,3 +25,7 @@ make install
 echo "-- Installed version --"
 echo "$(protoc –-version)"
 echo "-- -- --"
+
+cd ..
+
+sudo rm -r protoc
