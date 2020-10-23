@@ -94,12 +94,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/anaconda3/bin:$HOME/Library/Python/3.7/bin:$PATH"
 
 # External Alias File
 source ~/.vim/alias_file
-alias pip=/usr/local/bin/pip3.7
-alias python=/usr/local/bin/python3.7
+alias python=$HOME/conda/bin/python
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-conda activate $HOME/conda
+source activate base
