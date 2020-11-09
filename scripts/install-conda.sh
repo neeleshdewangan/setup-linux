@@ -3,4 +3,4 @@ sh Anaconda* -b -p $HOME/conda
 rm Anaconda*.sh
 eval "$($HOME/conda/bin/conda shell.zsh hook)"
 conda init
-source activate base
+source $HOME/conda/bin/activate
