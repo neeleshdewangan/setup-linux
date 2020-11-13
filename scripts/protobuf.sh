@@ -28,4 +28,4 @@ echo "-- -- --"
 
 cd ..
 
-sudo rm -r protoc
+sudo rm -r protobuf
