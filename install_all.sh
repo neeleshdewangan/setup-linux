@@ -24,4 +24,14 @@ git push origin HEAD
 cd ..
 
 chmod +x $HOME/.vim/scripts/shopt
+
+mkdir -p $HOME/library
+cd $HOME/library
+aws s3 cp s3://smartad-dmp/lib/lightlda.tgz $HOME/library/
+tar zxvf lightlda.tgz
+rm lightlda.tgz
+cd -
+
+sh $HOME/box/ec2/scripts/setup_conda.sh
+
 zsh
