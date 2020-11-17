@@ -100,3 +100,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/.vim/alias_file
 source ~/.bashrc
 source $HOME/miniconda/bin/activate
+
+cd $HOME
