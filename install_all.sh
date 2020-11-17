@@ -23,4 +23,5 @@ git config credential.helper store
 git push origin HEAD
 cd ..
 
+chmod +x $HOME/.vim/scripts/shopt
 zsh
