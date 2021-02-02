@@ -116,4 +116,3 @@ source ~/.bash-my-aws/bash_completion.sh
 
 cd $HOME/Desktop/projects/
 
-export HOMEBREW_GITHUB_API_TOKEN="8da127bf91e86fae329ed31176e7c181a84e76a6"
