@@ -26,6 +26,9 @@ ZSH_THEME="bira"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Always true to update prompt
+DISABLE_UPDATE_PROMPT=true
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
@@ -100,4 +103,17 @@ source ~/.vim/alias_file
 alias python=$HOME/conda/bin/python
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-source activate base
+source ~/conda/bin/activate
+
+export PATH="$PATH:$HOME/.bash-my-aws/bin"
+source ~/.bash-my-aws/aliases
+
+# For ZSH users, uncomment the following two lines:
+# autoload -U +X compinit && compinit
+# autoload -U +X bashcompinit && bashcompinit
+
+source ~/.bash-my-aws/bash_completion.sh
+
+cd $HOME/Desktop/projects/
+
+export HOMEBREW_GITHUB_API_TOKEN="8da127bf91e86fae329ed31176e7c181a84e76a6"

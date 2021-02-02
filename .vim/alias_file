@@ -6,6 +6,7 @@ alias gpo='git push origin'
 alias gpl='git pull'
 alias gbh='git branch'
 alias gcmt='git commit -am'
+alias gamt='git commit -m'
 alias gcn='git clone --recursive'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
@@ -13,3 +14,44 @@ alias gdel='git branch --delete'
 alias gdelcurr='git rev-parse --abbrev-ref HEAD > /tmp/.gitbranch && git checkout master && git pull && git branch --delete $(head -1 /tmp/.gitbranch)'
 alias gdeldev='git rev-parse --abbrev-ref HEAD > /tmp/.gitbranch && git checkout develop && git pull && git branch --delete $(head -1 /tmp/.gitbranch)'
 alias gtree='git log --oneline --decorate --graph --all'
+alias gauthorupdate='git commit --amend --author "Neelesh Dewangan <neelesh.dewangan@smartnews.com>" --no-edit'
+alias gamend='git commit --amend'
+alias grb='git rebase'
+alias gmodu='git submodule update --remote --merge'
+
+# PC Related Aliases
+export s3neel='s3://smartad-dmp/warehouse/user/neelesh'
+alias aliaslist='cat $HOME/.vim/alias_file'
+alias runsocks='sh $HOME/Desktop/projects/run_socks_all.sh'
+alias sourcealias='source ~/.vim/alias_file'
+
+# Java Aliases
+java_path='/Library/Java/JavaVirtualMachines'
+alias usejava8='export JAVA_HOME=$java_path/adoptopenjdk-8.jdk/Contents/Home'
+alias usejava7='export JAVA_HOME=$java_path/zulu-7.jdk/Contents/Home'
+alias usejava11='export JAVA_HOME=$java_path/adoptopenjdk-11.jdk/Contents/Home'
+
+# AWS Aliases
+alias recsysdmp='i-06a6e7d765d691b0f'
+alias awsssm='aws ssm start-session --target '
+alias s3ls='aws s3 ls'
+alias dlogin='aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 165463520094.dkr.ecr.ap-northeast-1.amazonaws.com'
+export AWS_ACCESS_KEY_ID='AKIASNBTE6NPPRPM4XFY'
+export AWS_SECRET_ACCESS_KEY='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'
+export TERM=xterm-color
+
+# Scripts
+sassh()
+{
+
+  if [ ! -f /tmp/sassh_ec2 ] || [ $(( $(date +%s) - $(stat -f%c /tmp/sassh_ec2) )) -gt 600 ]; then
+    aws s3 cp --quiet s3://spaas-resource/cli/resource_list/sassh_ec2 /tmp/sassh_ec2
+  fi
+
+  local iid=$(set -e;\
+  join -1 5 -2 2 -a 1 <(cat /tmp/sassh_ec2) <(cat /tmp/sassh_asg) 2>/dev/null | \
+  sort -r -k 10 | unexpand | peco | awk '{print $4}')
+  if [ -n "$iid" ]; then
+    aws ssm start-session --target ${iid} --document-name AWS-StartInteractiveCommand --parameters command="bash -l" || true
+  fi
+}
